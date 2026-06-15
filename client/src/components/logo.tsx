@@ -1,6 +1,6 @@
 import { PROTECTED_ROUTES } from "@/routes/routes"
 import { Link } from "react-router-dom"
-import { FlaskConical, ShirtIcon } from "lucide-react"
+import { FlaskConical } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 const Logo = ({ isCollapsed = false, className }: { isCollapsed?: boolean, className?: string }) => {

@@ -1,0 +1,167 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "@fontsource-variable/geist";
+@import "@daveyplate/better-auth-ui/css";
+
+@custom-variant dark (&:is(.dark *));
+
+
+:root {
+  --background: oklch(0.99 0.01 240);
+  --foreground: oklch(0.15 0.02 240);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.15 0.02 240);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.15 0.02 240);
+  --primary: oklch(75.456% 0.2264 142.937);
+  --primary-foreground: oklch(0.99 0 0);
+  --secondary: oklch(0.95 0.03 260);
+  --secondary-foreground: oklch(0.4 0.15 260);
+  --muted: oklch(0.96 0.01 240);
+  --muted-foreground: oklch(0.5 0.02 240);
+  --accent: oklch(0.94 0.04 300);
+  --accent-foreground: oklch(0.4 0.15 300);
+  --destructive: oklch(0.6 0.2 25);
+  --border: oklch(0.9 0.02 240);
+  --input: oklch(0.9 0.02 240);
+  --ring: oklch(0.55 0.22 260);
+  --radius: 0.75rem;
+  --chart-1: oklch(0.6 0.2 260);
+  --chart-2: oklch(0.7 0.15 320);
+  --chart-3: oklch(0.5 0.2 180);
+  --chart-4: oklch(0.8 0.1 60);
+  --chart-5: oklch(0.6 0.2 30);
+}
+
+.dark {
+  --background: oklch(0.12 0.02 260);
+  --foreground: oklch(0.98 0.01 240);
+  --card: oklch(0.15 0.03 260);
+  --card-foreground: oklch(0.98 0.01 240);
+  --popover: oklch(0.15 0.03 260);
+  --popover-foreground: oklch(0.98 0.01 240);
+  --primary: oklch(0.7 0.18 260);
+  --primary-foreground: oklch(0.15 0.03 260);
+  --secondary: oklch(0.22 0.05 260);
+  --secondary-foreground: oklch(0.95 0.02 260);
+  --muted: oklch(0.2 0.04 260);
+  --muted-foreground: oklch(0.7 0.02 240);
+  --accent: oklch(0.25 0.08 300);
+  --accent-foreground: oklch(0.95 0.03 300);
+  --destructive: oklch(0.5 0.2 25);
+  --border: oklch(0.25 0.04 260);
+  --input: oklch(0.25 0.04 260);
+  --ring: oklch(0.7 0.18 260);
+}
+
+@theme inline {
+  --font-sans: 'Geist Variable', sans-serif;
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  html {
+    @apply font-sans;
+  }
+}
+
+@layer utilities {
+
+  .product-preview-base {
+    position: relative;
+    overflow: visible;
+    transform: translateZ(0);
+    will-change: transform;
+    image-rendering: -webkit-optimize-contrast;
+  }
+
+  .product-mask-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* IMPORTANT CHANGE */
+  z-index: 10;
+  pointer-events: none;
+}
+
+  .printable-area {
+    background: transparent !important;
+  }
+
+  .canvas-container {
+    background: transparent !important;
+  }
+
+  .printable-area.outlined {
+    border: 1px dashed #ee2761;
+    border-image-source: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAKAQMAAABYPjbAAAAABlBMVEUAAADuJ2Hma6fOAAAAAXRSTlMAQObYZgAAABVJREFUCNdjePAAhA4kMCABIBciDgCLPglB1HjPmgAAAABJRU5ErkJggg==);
+    border-image-slice: 1;
+    border-image-repeat: round;
+  }
+
+  .printable-area .printable-area-info-icon {
+    position: absolute;
+    bottom: -9px;
+    left: -9px;
+    width: 18px;
+    height: 18px;
+    display: block;
+    pointer-events: auto;
+    background: 50% / contain no-repeat url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAMAAADW3miqAAAAflBMVEUAAAC5vca5vca6vse5vcW4vcW5vMW5vMa8v8e7wce/v8jMzMy5vce4vMW4vMa4vcW5vcW4vcb///+4vMYoJWLZ2eKQj679/f7t7vH5+fr39/j19fff4eXc3uLO0dfJzNPn6Ovx8fWwr8WYlrRKSHtBP3TNzNvFxdUxLmkuK2dlzpnAAAAAEnRSTlMA+Z7+8+6sUEQtHApt2b/YvmzygClLAAABHklEQVQ4y5WUa1uDMAyFbSmwMW7rActthU3n5f//QRFdU6zDej6275PkyUny8G8dYl4WQhQljw93kH3EYMSi/S9IwgGMQ9Mr1TfDCIAnP5ldiKBupVFbBwh3ayZl0J1cqdNgxxUDnKSjE5BauRim2496PRtqAjMZk5DiTNfq/WLFCm/Vc2jz/FRV1TNl1ODf/UHQ3YO6AF/9ilDTa3Ot3i6SVCNavGBoJUm9nKWlFuzToRij3NCIeCl7sMPPNT3a0LCUnqPZghrkM5Sh34J6ZDMkoLYgBeEF+aQrfAovPVtAzSTIaSbZQpBjCxlMkGswjQpB7qjQ0LmQBnfGlyAaX2cRSLQIf6/U0WM5U8819z8Y/qeHjlieCZHldMT89QEuUkJ/+c4PVAAAAABJRU5ErkJggg==);
+  }
+
+  .grid-lines {
+    height: 100%;
+    pointer-events: none;
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+  }
+}

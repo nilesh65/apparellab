@@ -269,7 +269,7 @@ const EditorSidebar = ({
               <PopoverContent
                 align="start"
                 side="right"
-                className="w-[320px] sm:w-[400px] p-0 shadow-2xl
+                className="w-[320px] sm:w-100 p-0 shadow-2xl
                 border-border rounded-xl overflow-hidden
                 "
               >
@@ -287,7 +287,7 @@ const EditorSidebar = ({
                   <div className="flex flex-col gap-2">
                     <Textarea
                       value={userPrompt}
-                      className="resize-none flex-1 min-h-[40px]"
+                      className="resize-none flex-1 min-h-10"
                       placeholder="e.g. Stay Wild quote, A cool gamer freak dog..."
                       onChange={(e) => setUserPrompt(e.target.value)}
                     />
@@ -320,7 +320,7 @@ const EditorSidebar = ({
 
                     <div
                       className="grid grid-cols-5 gap-2
-                    max-h-[180px] overflow-y-auto
+                    max-h-45 overflow-y-auto
                     "
                     >
                       {ARTWORK_PRESET.map((art, i) => (

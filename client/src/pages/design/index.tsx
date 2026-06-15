@@ -41,7 +41,7 @@ const DesignPage = () => {
       basePrice={basePrice}
     >
       <div className="flex w-full h-[calc(100vh-48px)] overflow-hidden">
-        <aside className="hidden lg:flex w-[340px] xl:w-[380px] shrink-0 border-t border-r overflow-y-auto flex-col">
+        <aside className="hidden lg:flex w-85 xl:w-95 shrink-0 border-t border-r overflow-y-auto flex-col">
           <EditorSidebar
             templateId={template._id}
             basePrice={basePrice}

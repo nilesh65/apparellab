@@ -5,7 +5,7 @@ import Listing from "../models/listing.model";
 import Product from "../models/products.model";
 import { BadRequestException, InternalServerException, NotFoundException } from "../utils/app-error";
 import { CreateListingType } from "../validators/listing.validator";
-import { SYSTEM_PROMPT } from "../utils/prompt";
+
 import { InferenceClient } from "@huggingface/inference";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import Order from "../models/order.model";

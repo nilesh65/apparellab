@@ -3,7 +3,8 @@
 A full-stack print-on-demand platform where creators design custom apparel, publish listings, and sell directly to customers — powered by AI artwork generation and Cloudinary-based mockup rendering.
 
 ---
-
+## 🔗 Live Link
+ https://apparellab.onrender.com/
 ## ✨ Features
 
 - **Design Editor** — Fabric.js canvas with custom controls (move, scale, rotate, delete) placed exactly over a product's printable area
